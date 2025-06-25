@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class WeatherManager {
+    - __instance : Optional[WeatherManager]
+    - __init__()
+    + __new__(cls)
+    + geocode_city(city: str) : Tuple[float, float]
+    + fetch(lat: float = LATITUDE, lon: float = LONGITUDE) : Weather
+    - _get_weather_description(code: int) : str
+}
+
+WeatherManager --> Weather : uses
+@enduml

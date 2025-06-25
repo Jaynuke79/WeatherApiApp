@@ -1,0 +1,11 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class funcs {
+    {static} BASE_URL : str
+    {static} GEOCODE_URL : str
+    {static} LATITUDE : float
+    {static} LONGITUDE : float
+    {static} console : rich.console.Console
+}
+@enduml

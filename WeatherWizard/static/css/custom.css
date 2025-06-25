@@ -1,0 +1,73 @@
+/* Custom styles for the weather app */
+
+/* Make the body take up full height */
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Styles for city suggestions */
+#citySuggestions {
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Weather card animations */
+#weatherCard {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Weather icon styling */
+#weatherIcon {
+    transition: transform 0.5s ease;
+}
+
+#weatherIcon:hover {
+    transform: scale(1.1);
+}
+
+/* Temperature display */
+#temperature {
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #weatherIcon {
+        font-size: 4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    #temperature, #windSpeed {
+        font-size: 2rem;
+    }
+}
+
+/* Focus styles for city input */
+#cityInput:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Add subtle hover effect to weather data cards */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Make sure the footer stays at the bottom */
+.footer {
+    margin-top: auto;
+}

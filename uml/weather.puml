@@ -1,0 +1,13 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Weather {
+    - _temperature : float
+    - _windspeed : float
+    - _description : str
+    + __init__(temperature: float, windspeed: float, description: str)
+    + temperature : float
+    + windspeed : float
+    + description : str
+}
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+' === Classes ===
+class Weather {
+    - _temperature : float
+    - _windspeed : float
+    - _description : str
+    + __init__(temperature: float, windspeed: float, description: str)
+    + temperature : float
+    + windspeed : float
+    + description : str
+}
+
+class WeatherManager {
+    - __instance : Optional[WeatherManager]
+    - __init__()
+    + __new__(cls)
+    + geocode_city(city: str) : Tuple[float, float]
+    + fetch(lat: float = LATITUDE, lon: float = LONGITUDE) : Weather
+    - _get_weather_description(code: int) : str
+}
+
+class funcs {
+    {static} BASE_URL : str
+    {static} GEOCODE_URL : str
+    {static} LATITUDE : float
+    {static} LONGITUDE : float
+    {static} console : Console
+}
+
+' === Relationships ===
+WeatherManager --> Weather : returns
+WeatherManager --> funcs : uses constants
+@enduml
